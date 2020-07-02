@@ -2,8 +2,9 @@ $(function () {
     // 阻止 双击选取文字
     window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
 
-    $('#form-log-in').hide()
-    $('#form-sign-in').show()
+    // 这是让  进入login 页面的时候  看到的是注册页面
+    // $('#form-log-in').hide()
+    // $('#form-sign-in').show()
 
     // 这是登录和注册的切换功能
     $('.log-in').on('click', function () {
@@ -27,7 +28,9 @@ $(function () {
         // 这是再次验证密码框(注册)
         repwd: function (v) {
             let pwd = $('#form-sign-in [name=password]').val()
-            if (pwd !== v) return '两次输入的密码不一致'
+            if (pwd !== v) {
+                return '两次输入的密码不一致'
+            }
         }
     })
 
